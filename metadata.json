@@ -1,0 +1,121 @@
+// 包的元数据
+{
+  // 插件名称
+  "name": "zntg",
+  // 插件类型 H5 或 RN
+  "type": "H5",
+  // 版本
+  "version": "1.1.2",
+  // 描述
+  "description": "智能投顾",
+  // 来源
+  "source": "平安证券",
+  // 主页文件
+  "main": "index.html",
+  // 环境依赖
+  // aladdin 的版本
+  "aladdin": {
+    "min": "1.0",
+    "max": ""
+  },
+  "os": {
+    // 支持的平台系统版本，如果不指定平台没有则不支持
+    "android": {
+      "min": "4.1",
+      "max": ""
+    },
+    "ios": {
+      "min": "7.0",
+      "max": ""
+    }
+  },
+  "hardware": {
+    // 支持硬件设备型号
+    // 智能单独设置白名单或黑名单中的一个
+    "android": {
+      // [""] 标示指定的型号
+      // 具体的设备名称、型号需再定义
+      "whiteList": [
+        "HuaWei Mate8"
+      ],
+      "blackList": [
+        "Meizu M8"
+      ]
+    },
+    "ios": {}
+  },
+  // 加载方式
+  // offline: 离线包
+  // online: 在线包，考虑做离线缓存，解决白屏问题（除了首次）
+  "loadingWay": "offline",
+  // 更新时机
+  // appStart: 应用启动时更新
+  // pluginStart: 插件启动时更新
+  "upgradeTiming": "appStart",
+  // 包类型，在线包除外，可没有此配置
+  // full: 全量包
+  // incre: 增量包
+  "upgradeType": "incre",
+  // 升级策略，在线包除外，可没有此配置
+  // forced: 强制升级，立即生效
+  // option: 可选升级，提示，由用户选择(以后有需求再实现)
+  "upgradeStrategy": "forced",
+  // 升级方式，在线包除外，可没有此配置
+  // onlyWifi: 仅在 wifi 下升级
+  // anyWay: 任何方式下升级
+  "upgradeWay": "onlyWifi",
+  // 发布类型，在线包除外，可没有此配置
+  // 每发布一次，生成一个版本号、一个包，无论 demo、测试、灰度测试、正式，版本号都递增，都对应一个包
+  // demo: 演示
+  // test: 测试
+  // grayTest: 灰度测试
+  // formal: 正式发布
+  "publishType": "grayTest",
+  // 生效时间
+  // 比如活动，提前推送到本地，到指定时间才生效，可避免网络高峰
+  "effectTime": "2016-11-11 00:00:00",
+  // 过期时间
+  // 比如活动结束，所有页面将不能访问
+  "expiredTime": "9999-12-12 00:00:00",
+  // 依赖的组件列表，未在此列表中的不允许访问
+  "dependComponents": {
+    // * 标记为允许访问所有方法
+    // [""] 指定允许访问的方法列表
+    "navigator": [
+      "setHeader",
+      "forward"
+    ],
+    "toast": "*",
+    "dialog": "*",
+    "camera": "*",
+    "scaner": "*",
+    "loading": "*",
+    "network": "*",
+    "phone": "*",
+    "geolocation": "*"
+  },
+  // 离线包文件与在线的对应，在线包除外，可没有此配置
+  // 如果不配置则按照默认规则匹配，如果匹配不到显示 404 页面
+  // 在线包除外，可没有此配置
+  "urlMapping": {
+    "origin": {
+      "zntg/": "http://zntg.pingan.com/"
+    },
+    "files": {
+      // 如 首页，其中 zntg.pingan.com 可省略
+      "index.html": "index.html"
+    }
+  },
+  // 证书校验
+  "certCheck": {
+    "srv.zntg.pingan.com": "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCc5GvA2uhxL9DAA7jE9PR00Ay/\n48/5ZgoansmunuOb8TR5dGv6T/+k2GLnPUx4Vq/ND0UbziItvFbrfoJVLiiAW5KB\n5CLizRE315mJS3esgNXwx21yjBAbzZrcCMDV5nQQiLUuyubwxg3RpckJEIOO/BQg\nCoptEHH6W2XkBWTluQIDAQAB\n-----ENDPUBLICKEY-----"
+  },
+  // 其他配置，可预设导航的样式，避免闪屏
+  // 具体配置待定
+  "options": {
+    // 是否有默认导航栏
+    "navigator": "true",
+    // 菜单
+    "menu": {}
+  }
+}
